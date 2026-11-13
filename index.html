@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="index, follow">
+  <title>Austin Johnson | Websites for Ashland Businesses</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, "Times New Roman", serif; color: #0b2447; background: #fff8f0; line-height: 1.7; overflow-x: hidden; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: #a3b899; border-bottom: 3px solid #0b2447; padding: 14px 0; }
+    header .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.6rem; letter-spacing: -0.03em; }
+    .logo span { color: #ff6b00; }
+    header nav { display: flex; align-items: center; gap: 26px; }
+    header nav a { font-family: Arial, Helvetica, sans-serif; color: #0b2447; text-decoration: none; font-size: 0.95rem; font-weight: 700; border-bottom: 3px solid transparent; padding-bottom: 2px; }
+    header nav a:hover { border-bottom-color: #ff6b00; }
+    header nav a.cta { background: #ff6b00; color: #fff; padding: 10px 20px; border: 3px solid #0b2447; box-shadow: 4px 4px 0 #0b2447; border-bottom-width: 3px; transition: transform 0.15s, box-shadow 0.15s; }
+    header nav a.cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #0b2447; }
+    .hero { padding: 70px 0 90px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: center; }
+    .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02; letter-spacing: -0.03em; }
+    .hero h1 em { color: #ff6b00; font-style: italic; }
+    .hero p { font-size: 1.15rem; margin: 22px 0 30px; max-width: 520px; }
+    .button { display: inline-block; font-family: Arial, Helvetica, sans-serif; background: #ff6b00; color: #fff; padding: 16px 30px; text-decoration: none; font-weight: 700; border: 3px solid #0b2447; box-shadow: 6px 6px 0 #0b2447; transition: transform 0.15s, box-shadow 0.15s; }
+    .button:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #0b2447; }
+    .badge { background: #0b2447; color: #fff; padding: 34px; transform: rotate(2deg); box-shadow: 10px 10px 0 #ff6b00; animation: float 4s ease-in-out infinite; }
+    .badge .big { font-size: 3rem; font-weight: 700; line-height: 1; color: #ff6b00; }
+    .badge p { font-family: Arial, Helvetica, sans-serif; margin: 12px 0 0; font-size: 1rem; }
+    .dark { background: #0b2447; color: #fff; padding: 90px 0; }
+    .dark h2 { color: #fff; }
+    h2 { font-size: 2.4rem; letter-spacing: -0.02em; margin-bottom: 30px; }
+    .offer { list-style: none; counter-reset: n; }
+    .offer li { counter-increment: n; display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.25); font-size: 1.25rem; }
+    .offer li::before { content: "0" counter(n); font-family: Arial, Helvetica, sans-serif; color: #ff6b00; font-weight: 700; }
+    .offer li span { display: block; font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; color: #cbd5e1; margin-top: 4px; }
+    .section { padding: 90px 0; }
+    .price-row { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+    .price { font-size: clamp(3rem, 9vw, 5.5rem); font-weight: 700; color: #ff6b00; line-height: 1; }
+    .price-row p { font-family: Arial, Helvetica, sans-serif; max-width: 380px; }
+    .timeline { border-left: 4px solid #ff6b00; margin-left: 10px; padding-left: 34px; }
+    .timeline div { margin-bottom: 30px; position: relative; }
+    .timeline div::before { content: ""; position: absolute; left: -45px; top: 8px; width: 16px; height: 16px; background: #0b2447; border-radius: 50%; }
+    .timeline strong { font-size: 1.3rem; display: block; }
+    .timeline span { font-family: Arial, Helvetica, sans-serif; color: #475569; }
+    .about { background: #ffe8d1; padding: 90px 0; }
+    .about p { font-size: 1.3rem; max-width: 720px; }
+    footer { background: #0b2447; color: #fff; padding: 90px 0; }
+    footer h2 { font-size: clamp(2.2rem, 6vw, 4rem); }
+    footer a { font-family: Arial, Helvetica, sans-serif; color: #ff6b00; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; text-decoration: none; }
+    footer p { font-family: Arial, Helvetica, sans-serif; color: #cbd5e1; margin-top: 12px; }
+
+    /* Animations */
+    @keyframes float { 0%, 100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-12px); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero .wrap > div:first-child > * { animation: rise 0.8s ease both; }
+    .hero h1 { animation-delay: 0.05s; }
+    .hero p { animation-delay: 0.25s; }
+    .hero .button { animation-delay: 0.45s; }
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .offer li.reveal, .timeline div.reveal { transition-delay: var(--d, 0s); }
+    .price.reveal { transform: scale(0.85); }
+    .price.reveal.show { transform: scale(1); }
+    @media (max-width: 720px) { .hero .wrap { grid-template-columns: 1fr; } .badge { animation: none; transform: none; } header a { margin-left: 14px; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+
+  <header><div class="wrap">
+    <span class="logo">Austin<span>.</span> Johnson</span>
+    <nav><a href="#offer">Offer</a><a href="#pricing">Pricing</a><a class="cta" href="#contact">Contact</a></nav>
+  </div></header>
+
+  <div class="hero"><div class="wrap">
+    <div>
+      <h1>No website? Your customers <em>can't find you.</em></h1>
+      <p>I build websites for Ashland small businesses. See yours first, free, and only pay if you love it.</p>
+      <a class="button" href="#contact">Get my free preview</a>
+    </div>
+    <div class="badge">
+      <div class="big">Ashland</div>
+      <p>Built by a local, for local businesses.</p>
+    </div>
+  </div></div>
+
+  <div class="dark" id="offer"><div class="wrap">
+    <h2 class="reveal">What you get</h2>
+    <ul class="offer">
+      <li class="reveal" style="--d:0s"><div>A site made for your business<span>Your hours, your services, your photos. Not a generic template.</span></div></li>
+      <li class="reveal" style="--d:0.12s"><div>Looks great on every phone<span>Most customers will find you on their phone, so that comes first.</span></div></li>
+      <li class="reveal" style="--d:0.24s"><div>Domain and launch handled<span>I set up your web address and put the site live for you.</span></div></li>
+      <li class="reveal" style="--d:0.36s"><div>One round of edits<span>Tell me what to change after you see the preview.</span></div></li>
+    </ul>
+  </div></div>
+
+  <div class="section" id="pricing"><div class="wrap">
+    <h2 class="reveal">Pricing</h2>
+    <div class="price-row">
+      <div class="price reveal">$500 to $750</div>
+      <p class="reveal" style="--d:0.2s">Per website, with no surprises. The final price depends on how many pages you need.</p>
+    </div>
+  </div></div>
+
+  <div class="section" style="padding-top:0"><div class="wrap">
+    <h2 class="reveal">How it works</h2>
+    <div class="timeline">
+      <div class="reveal" style="--d:0s"><strong>We talk</strong><span>Tell me about your business and what you need.</span></div>
+      <div class="reveal" style="--d:0.15s"><strong>Free preview</strong><span>I send you a link to see your site before you pay.</span></div>
+      <div class="reveal" style="--d:0.3s"><strong>Edits</strong><span>You request one round of changes.</span></div>
+      <div class="reveal" style="--d:0.45s"><strong>Launch</strong><span>I put the site live on your domain.</span></div>
+    </div>
+  </div></div>
+
+  <div class="about"><div class="wrap">
+    <h2 class="reveal">About me</h2>
+    <p class="reveal" style="--d:0.15s">I'm Austin, a 16-year-old Ashland local. I use AI to build your website from the information you give me about your business, like your hours, services, and photos. That keeps my prices low and gets your site done fast, and it helps more people in town find you.</p>
+  </div></div>
+
+  <footer id="contact"><div class="wrap">
+    <h2 class="reveal">Let's talk.</h2>
+    <a class="reveal" style="--d:0.15s; display:inline-block" href="tel:5412923563">541-292-3563</a>
+    <p class="reveal" style="--d:0.3s">Call or text. I reply within one day.</p>
+  </div></footer>
+
+  <script>
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('show'); });
+    }
+  </script>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="index, follow">
+  <title>Austin Johnson | Websites for Ashland Businesses</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, "Times New Roman", serif; color: #0b2447; background: #fff8f0; line-height: 1.7; overflow-x: hidden; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+    header { position: sticky; top: 0; z-index: 100; background: #a3b899; border-bottom: 3px solid #0b2447; padding: 14px 0; }
+    header .wrap { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.6rem; letter-spacing: -0.03em; }
+    .logo span { color: #ff6b00; }
+    header nav { display: flex; align-items: center; gap: 26px; }
+    header nav a { font-family: Arial, Helvetica, sans-serif; color: #0b2447; text-decoration: none; font-size: 0.95rem; font-weight: 700; border-bottom: 3px solid transparent; padding-bottom: 2px; }
+    header nav a:hover { border-bottom-color: #ff6b00; }
+    header nav a.cta { background: #ff6b00; color: #fff; padding: 10px 20px; border: 3px solid #0b2447; box-shadow: 4px 4px 0 #0b2447; border-bottom-width: 3px; transition: transform 0.15s, box-shadow 0.15s; }
+    header nav a.cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #0b2447; }
+    .hero { padding: 70px 0 90px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; align-items: center; }
+    .hero h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02; letter-spacing: -0.03em; }
+    .hero h1 em { color: #ff6b00; font-style: italic; }
+    .hero p { font-size: 1.15rem; margin: 22px 0 30px; max-width: 520px; }
+    .button { display: inline-block; font-family: Arial, Helvetica, sans-serif; background: #ff6b00; color: #fff; padding: 16px 30px; text-decoration: none; font-weight: 700; border: 3px solid #0b2447; box-shadow: 6px 6px 0 #0b2447; transition: transform 0.15s, box-shadow 0.15s; }
+    .button:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #0b2447; }
+    .badge { background: #0b2447; color: #fff; padding: 34px; transform: rotate(2deg); box-shadow: 10px 10px 0 #ff6b00; animation: float 4s ease-in-out infinite; }
+    .badge .big { font-size: 3rem; font-weight: 700; line-height: 1; color: #ff6b00; }
+    .badge p { font-family: Arial, Helvetica, sans-serif; margin: 12px 0 0; font-size: 1rem; }
+    .dark { background: #0b2447; color: #fff; padding: 90px 0; }
+    .dark h2 { color: #fff; }
+    h2 { font-size: 2.4rem; letter-spacing: -0.02em; margin-bottom: 30px; }
+    .offer { list-style: none; counter-reset: n; }
+    .offer li { counter-increment: n; display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.25); font-size: 1.25rem; }
+    .offer li::before { content: "0" counter(n); font-family: Arial, Helvetica, sans-serif; color: #ff6b00; font-weight: 700; }
+    .offer li span { display: block; font-family: Arial, Helvetica, sans-serif; font-size: 0.95rem; color: #cbd5e1; margin-top: 4px; }
+    .section { padding: 90px 0; }
+    .price-row { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; }
+    .price { font-size: clamp(3rem, 9vw, 5.5rem); font-weight: 700; color: #ff6b00; line-height: 1; }
+    .price-row p { font-family: Arial, Helvetica, sans-serif; max-width: 380px; }
+    .timeline { border-left: 4px solid #ff6b00; margin-left: 10px; padding-left: 34px; }
+    .timeline div { margin-bottom: 30px; position: relative; }
+    .timeline div::before { content: ""; position: absolute; left: -45px; top: 8px; width: 16px; height: 16px; background: #0b2447; border-radius: 50%; }
+    .timeline strong { font-size: 1.3rem; display: block; }
+    .timeline span { font-family: Arial, Helvetica, sans-serif; color: #475569; }
+    .about { background: #ffe8d1; padding: 90px 0; }
+    .about p { font-size: 1.3rem; max-width: 720px; }
+    footer { background: #0b2447; color: #fff; padding: 90px 0; }
+    footer h2 { font-size: clamp(2.2rem, 6vw, 4rem); }
+    footer a { font-family: Arial, Helvetica, sans-serif; color: #ff6b00; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; text-decoration: none; }
+    footer p { font-family: Arial, Helvetica, sans-serif; color: #cbd5e1; margin-top: 12px; }
+
+    /* Animations */
+    @keyframes float { 0%, 100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-12px); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .hero .wrap > div:first-child > * { animation: rise 0.8s ease both; }
+    .hero h1 { animation-delay: 0.05s; }
+    .hero p { animation-delay: 0.25s; }
+    .hero .button { animation-delay: 0.45s; }
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .offer li.reveal, .timeline div.reveal { transition-delay: var(--d, 0s); }
+    .price.reveal { transform: scale(0.85); }
+    .price.reveal.show { transform: scale(1); }
+    /* Media scales to fit its container */
+    img, video, canvas, svg, picture { max-width: 100%; height: auto; }
+    iframe, embed, object { max-width: 100%; }
+    h1, h2, p, a, strong, span { overflow-wrap: break-word; }
+    [id] { scroll-margin-top: 90px; }
+
+    /* Menu toggle (hidden on desktop) */
+    .menu-toggle { display: none; }
+
+    @media (max-width: 720px) {
+      .wrap { padding: 0 20px; }
+      .hero { padding: 48px 0 64px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+      .badge { animation: none; transform: none; box-shadow: 8px 8px 0 #ff6b00; padding: 28px; }
+      .badge .big { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      .dark, .section, .about, footer { padding: 64px 0; }
+      .offer li { grid-template-columns: 48px 1fr; font-size: 1.15rem; }
+      .offer li span, .price-row p, .timeline span, footer p { font-size: 1rem; }
+      .about p { font-size: 1.15rem; }
+      .timeline { padding-left: 26px; }
+      .timeline div::before { left: -37px; }
+      .button { display: flex; align-items: center; justify-content: center; min-height: 48px; text-align: center; }
+      footer a { display: inline-flex !important; align-items: center; min-height: 48px; }
+
+      /* Collapsible navigation */
+      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 48px; min-height: 48px; padding: 0 12px; background: #fff8f0; color: #0b2447; border: 3px solid #0b2447; box-shadow: 3px 3px 0 #0b2447; font: 700 1rem Arial, Helvetica, sans-serif; cursor: pointer; }
+      .menu-toggle .bars, .menu-toggle .bars::before, .menu-toggle .bars::after { display: block; width: 20px; height: 3px; background: #0b2447; position: relative; transition: transform 0.2s, background 0.2s; }
+      .menu-toggle .bars::before, .menu-toggle .bars::after { content: ""; position: absolute; left: 0; }
+      .menu-toggle .bars::before { top: -7px; }
+      .menu-toggle .bars::after { top: 7px; }
+      .menu-toggle[aria-expanded="true"] .bars { background: transparent; }
+      .menu-toggle[aria-expanded="true"] .bars::before { transform: translateY(7px) rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] .bars::after { transform: translateY(-7px) rotate(-45deg); }
+
+      .js header nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #a3b899; border-bottom: 3px solid #0b2447; padding: 8px 20px 20px; }
+      .js header nav.open { display: flex; }
+      header nav { flex-wrap: wrap; gap: 4px 16px; }
+      header nav a { display: flex; align-items: center; min-height: 48px; font-size: 1.05rem; }
+      .js header nav a { border-bottom: 1px solid rgba(11,36,71,0.25); padding: 0 4px; }
+      .js header nav a.cta { justify-content: center; margin-top: 14px; padding: 0 20px; border: 3px solid #0b2447; }
+    }
+    @media (max-width: 400px) {
+      .logo { font-size: 1.3rem; }
+      .menu-label { display: none; }
+      .hero h1 { font-size: 2.3rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+
+  <header><div class="wrap">
+    <span class="logo">Austin<span>.</span> Johnson</span>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span class="bars" aria-hidden="true"></span><span class="menu-label">Menu</span></button>
+    <nav id="site-nav" aria-label="Main"><a href="#offer">Offer</a><a href="#pricing">Pricing</a><a class="cta" href="#contact">Contact</a></nav>
+  </div></header>
+
+  <div class="hero"><div class="wrap">
+    <div>
+      <h1>No website? Your customers <em>can't find you.</em></h1>
+      <p>I build websites for Ashland small businesses. See yours first, free, and only pay if you love it.</p>
+      <a class="button" href="#contact">Get my free preview</a>
+    </div>
+    <div class="badge">
+      <div class="big">Ashland</div>
+      <p>Built by a local, for local businesses.</p>
+    </div>
+  </div></div>
+
+  <div class="dark" id="offer"><div class="wrap">
+    <h2 class="reveal">What you get</h2>
+    <ul class="offer">
+      <li class="reveal" style="--d:0s"><div>A site made for your business<span>Your hours, your services, your photos. Not a generic template.</span></div></li>
+      <li class="reveal" style="--d:0.12s"><div>Looks great on every phone<span>Most customers will find you on their phone, so that comes first.</span></div></li>
+      <li class="reveal" style="--d:0.24s"><div>Domain and launch handled<span>I set up your web address and put the site live for you.</span></div></li>
+      <li class="reveal" style="--d:0.36s"><div>One round of edits<span>Tell me what to change after you see the preview.</span></div></li>
+    </ul>
+  </div></div>
+
+  <div class="section" id="pricing"><div class="wrap">
+    <h2 class="reveal">Pricing</h2>
+    <div class="price-row">
+      <div class="price reveal">$500 to $750</div>
+      <p class="reveal" style="--d:0.2s">Per website, with no surprises. The final price depends on how many pages you need.</p>
+    </div>
+  </div></div>
+
+  <div class="section" style="padding-top:0"><div class="wrap">
+    <h2 class="reveal">How it works</h2>
+    <div class="timeline">
+      <div class="reveal" style="--d:0s"><strong>We talk</strong><span>Tell me about your business and what you need.</span></div>
+      <div class="reveal" style="--d:0.15s"><strong>Free preview</strong><span>I send you a link to see your site before you pay.</span></div>
+      <div class="reveal" style="--d:0.3s"><strong>Edits</strong><span>You request one round of changes.</span></div>
+      <div class="reveal" style="--d:0.45s"><strong>Launch</strong><span>I put the site live on your domain.</span></div>
+    </div>
+  </div></div>
+
+  <div class="about"><div class="wrap">
+    <h2 class="reveal">About me</h2>
+    <p class="reveal" style="--d:0.15s">I'm Austin, a 16-year-old Ashland local. I use AI to build your website from the information you give me about your business, like your hours, services, and photos. That keeps my prices low and gets your site done fast, and it helps more people in town find you.</p>
+  </div></div>
+
+  <footer id="contact"><div class="wrap">
+    <h2 class="reveal">Let's talk.</h2>
+    <a class="reveal" style="--d:0.15s; display:inline-block" href="tel:5412923563">541-292-3563</a>
+    <p class="reveal" style="--d:0.3s">Call or text. I reply within one day.</p>
+  </div></footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('site-nav');
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+      nav.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); toggle.focus(); }
+      });
+      document.addEventListener('click', function (e) {
+        if (nav.classList.contains('open') && !e.target.closest('header')) setOpen(false);
+      });
+      window.matchMedia('(min-width: 721px)').addEventListener('change', function (m) { if (m.matches) setOpen(false); });
+    })();
+
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('show'); });
+    }
+  </script>
+
+</body>
