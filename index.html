@@ -66,7 +66,16 @@
     .offer li.reveal, .timeline div.reveal { transition-delay: var(--d, 0s); }
     .price.reveal { transform: scale(0.85); }
     .price.reveal.show { transform: scale(1); }
-    @media (max-width: 720px) { .hero .wrap { grid-template-columns: 1fr; } .badge { animation: none; transform: none; } header a { margin-left: 14px; } }
+
+    @media (max-width: 720px) {
+      .wrap { padding: 0 20px; }
+      header .wrap { flex-direction: column; gap: 12px; }
+      header nav { gap: 18px; flex-wrap: wrap; justify-content: center; }
+      header nav a.cta { padding: 8px 16px; }
+      .hero { padding: 48px 0 64px; }
+      .hero .wrap { grid-template-columns: 1fr; }
+      .badge { animation: none; transform: none; }
+    }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
   </style>
 </head>
@@ -143,3 +152,4 @@
   </script>
 
 </body>
+</html>
